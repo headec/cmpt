@@ -1,1 +1,13 @@
-Preparing Graph...
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <% @people.each do |person| %>
+  <p>
+    <div class="grh" style="background-color:<%= person.colour %>; width:<%= person.weight %>px; height:<%= person.height %>px;"></div>
+    <%= person.name.capitalize %>
+  </p>
+    <% end %>
+</body>
+</html>
