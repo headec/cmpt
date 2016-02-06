@@ -5,8 +5,8 @@
 <body>
   <% @people.each do |person| %>
   <p>
-    <div class="grh" style="background-color:<%= person.colour %>; width:<%= person.weight %>px; height:<%= person.height %>px;"></div>
-    <%= person.name.capitalize %>
+    <div style="background-color:<%= person.colour %>; width:<%= person.weight %>px; height:<%= person.height %>px; text-align:center; color: white;"><%= person.name.capitalize %></div>
+    <br><br>
   </p>
     <% end %>
 </body>
