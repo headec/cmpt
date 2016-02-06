@@ -1,33 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing People</h1>
+<h1>Person Database</h1>
+<div class="main">
+  <div class="main-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Weight</th>
+          <th>Height</th>
+          <th>Colour</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Weight</th>
-      <th>Height</th>
-      <th>Colour</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @people.each do |person| %>
-      <tr>
-        <td><%= person.name %></td>
-        <td><%= person.weight %></td>
-        <td><%= person.height %></td>
-        <td><%= person.colour %></td>
-        <td><%= link_to 'Show', person %></td>
-        <td><%= link_to 'Edit', edit_person_path(person) %></td>
-        <td><%= link_to 'Delete', person, method: :delete, data: { confirm: 'WARNING: You will delete the data' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+      <tbody>
+        <% @people.each do |person| %>
+          <tr>
+            <td><%= person.name %></td>
+            <td><%= person.weight %></td>
+            <td><%= person.height %></td>
+            <td><%= person.colour %></td>
+            <td><%= link_to 'Show', person, class: 'btn btn-mini' %></td>
+            <td><%= link_to 'Edit', edit_person_path(person), class: 'btn btn-mini btn-success' %></td>
+            <td><%= link_to 'Delete', person, method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'WARNING: You will delete the data' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 <br>
 
-<%= link_to 'New Person', new_person_path %>
+<%= link_to 'Add New', new_person_path %>
